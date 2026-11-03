@@ -1,1 +1,0 @@
-# AI Foundations, History & Terminologies
