@@ -177,12 +177,215 @@ Analogy: its like writing on a small whiteboard. When the board is full, the old
 
 # 3. Model Controls (Knobs)
 
+## Randomness Control
+- after the model scores possible next tokens, these settings change how it chooses from that list.
+- They help you make the answer more predictable, more balanced, or more creative.
 
+**Important**: these settings dont retiain the model and do not change its parameters. 
+- They only affect how the model picks the next token during generation.
+
+randomness control
+    - temperature
+    - Top P
+    - Top K
+
+
+### Temperature
+- changed how spread out the probablities become. a low value keeps th emodel close to the safest answer. A high value flattens the probablities, so lower-probablity words get a letter change.
+
+Eg: "I went for fishing to the..."
+    low temp: lakem river
+     high temp: bucket, volcano
+
+### Top P
+- keeps the smallest set of words whose total probablity reaches the chosen value (p)
+
+Eg; the Top-P = 0.7, the model keeps adding the highest words until the running total reaches about 0.7. 
+
+### Top K
+- keps only the top k most likely words. it doesnt care abt the total probablity.
+- it only cares about how many words stay in the candidate list.
+
+Eg; if Top-k=5, only the first five words stay. Everything below rank five is removed, even if its probablity is still reasonable.
 
 # 4. Model Selection
 
+## i. Parameter size
+
+## ii. Context Window
+
+## iii. Modality
+    text only
+    multi modal
+## iv. Capability
+    coding
+    creativity writing
+    speed
+## v. Pricing
+
+
+- we have 2 options for models
+    - Option A: Proprietary Models
+    - Option B: Open-Source Models (Advanced)
 
 
 # 5. Prompt Engineering & Review
+
+1. Zero-Shot Prompting
+    - you ask the model to do a taks directly without giving examples.
+    - its simple, but its not always the most reliable choice.
+
+2. Few-Shot Prompting
+    - instead of only explaining the rule, you show a few examples and let the model continue the pattern.
+
+3. Chain of Thought
+    - You ask the model to solve the problem in steps before giving the final answer.
+    - this often helps for math and logic tasks.
+
+4. System Prompts
+    - A hidden instruction that sets the role, rules, and output before the real conversation starts.
+
+5. Other Techniques
+    - developers also use structured output, retrieval grounding, self-checking, and delimiters for more reliable AI apps.
+
+---
+## 1. Zero-Shot Prompting
+- whats OOP
+
+vs
+
+- explain OOP (object oriented programming) in js to a begineer in 3 short bullet points.
+- include what an object is and the difference between properties and methods.
+ 
+
+
+## 2. Few-Shot Prompting
+- classify push and pop
+
+vs
+
+- classify each Array method by its action: Add, Remove, or Iterate
+Method: push() -> Add
+Method: pop() -> Remove
+Method: forEach() -> Iterate
+Method: unshift() ->
+
+
+
+## 3. Chain of Thought
+how do functions work?
+
+vs
+
+- think step-by-stepp to explain how js function works?
+first, explain how to declare it.
+Second, explain the d/ce between parameters and arguments.
+Third, explain how to invoke it.
+Finally, explain what the return keyword does.
+
+
+
+## 4. System Prompts
+Teach me about functions.
+
+vs
+
+[system]
+You are a strict JavaScript tutor.
+When asked a question about functions or conditional statements, do not give the direct answer.
+Instead, ask a guiding question to help the student figure out the concepts on their own.
+
+[User]
+I dont understand how the return keyword works in a function. Can you explain it?
+
+
+## 5. Other Techniques
+List the DOM selection methods from the text as JSON:
+"Use getElementById for one element, or querySelectorAll for multiple."
+
+vs
+
+You are a data extractor. Extract the DOM selection methods and output ONLY valid JSON.
+Use this format: {"methods": [{'name': 'methodName', 'type':'single|multiple"}]}
+
+Text:
+"Use getElementById for one element, or querySelectorAll for multiple"
+
+---
+what are the 3 states of a Promise
+
+vs
+
+Answer the question using ONLY the provided course notes.
+If the answer is not in the notes, reply "I cant find the answer"
+
+Course Notes:
+1. Pending: initial state
+2. Fulfilled: operation successful
+3. Rejected: Operation failed
+Question: what are the 3 states of a Promise
+
+
+In General:
+- a good prompt usually answers these questions:
+    - whats the task?
+    - what rules should the model follow?
+    - what output format do you want?
+    - what examples or steps will help?
+
+
+
+
+---
+Giving AI a Memory - Building Your First Chatbot Demo
+Goal
+- Focus on Node.js talking to Gemini (no React) no MySQL yet
+- see why chat needs history, system prompts, streaming and temperature/topP.
+
+
+1. The "Hello World" of AI (Stateless Request)
+2. Solving Amnesia (Context Management)
+3. The System Prompt
+4. Streaming (the typewriter effect)
+5. Controlling the Model (Temperature & Top-P)
+6. The Group Task: Building the Full-Stack Chat Bot
+
+
+---
+- create api on google
+- npm.js -> @google/genai package
+    npm i @google/genai
+
+`npm i dotenv` - to keep our api safe
+add `.env` to ur .gitignore
+
+add ur GEMINI_API_KEY with this variable to .env file.
+
+# 1. The "Hello World" of AI (Stateless Request)
+- 
+
+
+
+# 2. Solving Amnesia (Context Management)
+
+
+
+# 3. The System Prompt
+
+
+
+# 4. Streaming (the typewriter effect)
+
+
+
+
+# 5. Controlling the Model (Temperature & Top-P)
+
+
+
+
+# 6. The Group Task: Building the Full-Stack Chat Bot
+
+
 
 
