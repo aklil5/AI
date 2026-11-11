@@ -362,15 +362,28 @@ add `.env` to ur .gitignore
 add ur GEMINI_API_KEY with this variable to .env file.
 
 # 1. The "Hello World" of AI (Stateless Request)
-- 
+- Purpose: Call Gemini with 'generateContent' - one message in, one reply out.
+- What happens: Two separate calls: "My name is Abe" thne "Whats my name?" The second call forgets Abe.
+- Lesson: Each API call is stateless. The AI doesnt remember unless you send history. 
 
 
 
 # 2. Solving Amnesia (Context Management)
+- Demo: '2-context memory.js'
 
+- Purpose: Show how a chatbot remembers.
+- What happens: Use 'chats.create' + 'sendMessage' for two turns. On turn 2, the AI knows the name.
+- Lesson: The SDK keeps a history array and sends the full conversation every time. We are the AI's memory.
 
 
 # 3. The System Prompt
+Demo: '3-system-prompt.js'
+
+- Purpose: Change how the AI behaves without changing the user's question.
+- What happens: ask the same question twice ("How do i center a div?").
+    First run: helpful assistant -> explanation + code.
+    Second run: "code CSS. Only 'System Instruction' changes.
+- Lesson: Hidden instructions shape the product (lawyer AI, tutor AI, etc...)
 
 
 
